@@ -1,9 +1,12 @@
 # IVA
 
+Event-driven (to be) virtual assistant and smart home management system. The intention is to help with planning/time
+management, automate routines, aggregating data from multiple sources and provide insides.
+
 ## Components
 
-* [Iva](https://github.com/project-iva/iva) is the core component, which orchestrates all the other components. It
-  handles incoming events and performs relevant actions or schedules relevant (timed)
+* [Iva](https://github.com/project-iva/iva) is the core component, which orchestrates all the other components. It acts
+  as event manager, handling incoming events and performing relevant actions or scheduling relevant (timed)
   events.
 
   For example:
@@ -21,12 +24,11 @@
   planning and for easy data exploration.
 * [raspberry-client](https://github.com/project-iva/iva_raspberry_client) is used to control the device on which the
   presenter (frontend) is running.
-* [iOS + watchOS extension](https://github.com/project-iva/iva_ios) leverages healtkit to retrieve readings from
+* [iOS app + watchOS extension](https://github.com/project-iva/iva_ios) leverages healtkit to retrieve readings from
   different apps (sleep, mindfulness, weight, etc.) and forwards them to the backend. Thanks to background delivery new
   data can be presented in the frontend as soon as they are recorded. Additionally, it lets users create day
-  planning/todos and update them. Lastly, it can be used to control the presenter device and to handle voice commands (
-  currently done by using Apple's speech to text/dictation capabilities and by sending the recognized text to Iva for
-  intent classification). Comes with watch extension for convenience.
+  planning/todos and update them. Lastly, it can be used to control the presenter device and to handle voice commands.
+  Comes with watch extension for convenience.
 * [intent classifier server](https://github.com/project-iva/iva_bert_classifier_api) servers fine-tuned distilBERT for
   intent classification.
 * [traefik](https://github.com/project-iva/iva_traefik) used for easy networking from the outside of the docker network.
