@@ -43,8 +43,7 @@ intent or create an entirely new intent. These utterances together with their la
 model. Afterwards, this process is repeated.
 
 There are some issues with this approach. Namely, almost identical utterances will keep getting repeated, not providing
-any new informative samples. And potentially even inhibiting the performance by skewing the label distribution of the
-dataset.
+any new information. And potentially even inhibiting the performance by skewing the label distribution of the dataset.
 
 The balance will always need to be considered, however, there are some possible mitigations to avoid almost identical (
 non-informative) utterances:
@@ -58,3 +57,27 @@ non-informative) utterances:
        machine translation such as BLEU can be considered. However, this approach probably won't yield good results,
        since most of these metrics are based around comparing uni/bi/tri...-grams, while utterances can differ in only
        single word and have completely opposite meaning e.g. "turn the screen on/off"
+
+### Intents
+
+As of now the system can recognize the following intents:
+
+* TURN_SCREEN_ON
+* TURN_SCREEN_OFF
+* INTRODUCE_YOURSELF
+* TELL_TIME
+* SPOTIFY_PLAY
+* SPOTIFY_STOP
+* TELL_JOKE
+* START_MORNING_ROUTINE
+* START_EVENING_ROUTINE
+
+## Speech-to-text and text-to-speech
+
+Speech-to-text is currently handled by Apple's speech module(iOS) and dictation (watchOS). And text-to-speech is done
+via Google's TTS API. If time and other resources allow, it would be very interesting to build a custom system.
+
+## Demo
+### Frontend/Presenter
+![presenter](https://user-images.githubusercontent.com/10901373/143780844-4940be8b-64d4-427c-a5f2-14fdf04314af.png)
+
