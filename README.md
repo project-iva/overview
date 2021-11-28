@@ -32,3 +32,29 @@ management, automate routines, aggregating data from multiple sources and provid
 * [intent classifier server](https://github.com/project-iva/iva_bert_classifier_api) servers fine-tuned distilBERT for
   intent classification.
 * [traefik](https://github.com/project-iva/iva_traefik) used for easy networking from the outside of the docker network.
+
+## Intent classification and training data collection
+
+Instead of manually creating a dataset and labeling it, I opted for a more interesting approach by mixing
+semi-supervised learning and active learning. I started by creating 2 samples per intent, fine-tuned and deployed the
+model. When an utterance is provided and the result is intent with low confidence, then the user is promoted to confirm
+the correctness of the classification. The user is able to confirm that the classification is correct/chose the correct
+intent or create an entirely new intent. These utterances together with their labels are saved and used to re-train the
+model. Afterwards, this process is repeated.
+
+There are some issues with this approach. Namely, almost identical utterances will keep getting repeated, not providing
+any new informative samples. And potentially even inhibiting the performance by skewing the label distribution of the
+dataset.
+
+The balance will always need to be considered, however, there are some possible mitigations to avoid almost identical (
+non-informative) utterances:
+
+1. Only save utterances when the confidence is bellow certain threshold, which could mean that this particular utterance
+   is informative.
+2. Clean up the dataset before training by removing non-informative samples, to find them we can:
+    1. Use model such as DistilBERT to embed the entire utterance in the vector space and calculate distance between
+       pairs.
+    2. Simpler approach would be to use some kind of metric to calculate the distance between pair. Metrics used in
+       machine translation such as BLEU can be considered. However, this approach probably won't yield good results,
+       since most of these metrics are based around comparing uni/bi/tri...-grams, while utterances can differ in only
+       single word and have completely opposite meaning e.g. "turn the screen on/off"
