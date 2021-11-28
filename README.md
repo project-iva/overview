@@ -78,6 +78,13 @@ Speech-to-text is currently handled by Apple's speech module(iOS) and dictation 
 via Google's TTS API. If time and other resources allow, it would be very interesting to build a custom system.
 
 ## Demo
+### Handling utterances from a chat app such as Slack
+https://user-images.githubusercontent.com/10901373/143785844-3ccd1667-84b4-4888-89e3-8a6aaae7eade.mp4
+
+### Handling unknown intents
+https://user-images.githubusercontent.com/10901373/143785855-8e74f8b6-3775-4d8c-9de9-8195b9a3d5d8.mp4
+
+
 ### Frontend/Presenter
 ![presenter](https://user-images.githubusercontent.com/10901373/143780844-4940be8b-64d4-427c-a5f2-14fdf04314af.png)
 
