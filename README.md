@@ -81,3 +81,17 @@ via Google's TTS API. If time and other resources allow, it would be very intere
 ### Frontend/Presenter
 ![presenter](https://user-images.githubusercontent.com/10901373/143780844-4940be8b-64d4-427c-a5f2-14fdf04314af.png)
 
+
+### Day planning/todos
+https://user-images.githubusercontent.com/10901373/143782791-d0b9abf5-12df-499f-9fab-02d00a55cd1b.mp4
+
+
+### Handle utterance
+https://user-images.githubusercontent.com/10901373/143782349-ea1ba3d3-7314-4868-a1d2-d0e16e8b1758.mov
+
+
+### Control session/routine with your watch
+https://user-images.githubusercontent.com/10901373/143782361-6aee4deb-8391-4e8e-a26f-2caab444eb11.mov
+
+
+
