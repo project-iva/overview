@@ -51,8 +51,7 @@ non-informative) utterances:
 1. Only save utterances when the confidence is bellow certain threshold, which could mean that this particular utterance
    is informative.
 2. Clean up the dataset before training by removing non-informative samples, to find them we can:
-    1. Use model such as DistilBERT to embed the entire utterance in the vector space and calculate distance between
-       pairs.
+    1. Use model such as DistilBERT to embed the entire utterance in the vector space and calculate cosine similarity.
     2. Simpler approach would be to use some kind of metric to calculate the distance between pair. Metrics used in
        machine translation such as BLEU can be considered. However, this approach probably won't yield good results,
        since most of these metrics are based around comparing uni/bi/tri...-grams, while utterances can differ in only
